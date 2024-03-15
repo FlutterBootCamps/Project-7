@@ -1,0 +1,49 @@
+name: cv_maker_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.4
+  flutter_dotenv: ^5.1.0
+  font_awesome_flutter: ^10.7.0
+  get_it: ^7.6.7
+  get_storage: ^2.1.1
+  supabase_flutter: ^2.3.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+  - .env
+  fonts:
+    - family: Nohemi
+      fonts:
+        - asset: assets/fonts/Nohemi-Black-BF6438cc5874bd2.otf
+        - asset: assets/fonts/Nohemi-Black-BF6438cc58744d4.ttf
+        - asset: assets/fonts/Nohemi-Bold-BF6438cc587b5b5.ttf
+        - asset: assets/fonts/Nohemi-Bold-BF6438cc5812315.otf
+        - asset: assets/fonts/Nohemi-ExtraBold-BF6438cc58a4c3c.otf
+        - asset: assets/fonts/Nohemi-ExtraBold-BF6438cc5881baf.ttf
+        - asset: assets/fonts/Nohemi-ExtraLight-BF6438cc57e06d5.otf
+        - asset: assets/fonts/Nohemi-ExtraLight-BF6438cc58a2634.ttf
+        - asset: assets/fonts/Nohemi-Light-BF6438cc583f70b.otf
+        - asset: assets/fonts/Nohemi-Light-BF6438cc5899919.ttf
+        - asset: assets/fonts/Nohemi-Medium-BF6438cc581a509.otf
+        - asset: assets/fonts/Nohemi-Medium-BF6438cc5883899.ttf
+        - asset: assets/fonts/Nohemi-Regular-BF6438cc4d0e493.ttf
+        - asset: assets/fonts/Nohemi-Regular-BF6438cc58b98fc.otf
+        - asset: assets/fonts/Nohemi-SemiBold-BF6438cc588a48a.ttf
+        - asset: assets/fonts/Nohemi-SemiBold-BF6438cc588b5e5.otf
+        - asset: assets/fonts/Nohemi-Thin-BF6438cc577ef3b.otf
+        - asset: assets/fonts/Nohemi-Thin-BF6438cc5896c67.ttf
+        - asset: assets/fonts/Nohemi-VF-BF6438cc58ad63d.ttf
