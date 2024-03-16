@@ -1,4 +1,5 @@
 import 'package:cv_maker_app/bloc/auth_bloc.dart';
+import 'package:cv_maker_app/bloc/cv_bloc.dart';
 import 'package:cv_maker_app/data_layer/home_data_layer.dart';
 import 'package:cv_maker_app/pages/login_page.dart';
 import 'package:cv_maker_app/pages/navigation_page.dart';
@@ -21,8 +22,15 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locator = GetIt.I.get<HomeData>();
-    return BlocProvider(
-      create: (context) => AuthBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CvBloc(),
+        ),
+      ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           home: (locator.token.isNotEmpty)

@@ -21,7 +21,9 @@ class NavigationPage extends StatelessWidget {
       child: BlocBuilder<NavigationBloc, NavigationState>(
         builder: (context, state) {
           return Scaffold(
+            resizeToAvoidBottomInset: false,
             appBar: AppBar(
+              scrolledUnderElevation: 0,
               backgroundColor: milkChocolateColor,
               leading: BlocListener<AuthBloc, AuthState>(
                 listener: (context, state) {

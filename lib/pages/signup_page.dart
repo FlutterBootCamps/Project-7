@@ -70,8 +70,8 @@ class SignupPage extends StatelessWidget {
                           fontWeight: FontWeight.w600)),
                   height32,
                   TextfieldIconed(
-                      hintText: "Enter your name",
-                      labelText: "Name",
+                      hintText: "Enter your full name",
+                      labelText: "Full Name",
                       icon: const Icon(
                         Icons.person,
                       ),

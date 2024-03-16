@@ -63,6 +63,11 @@ class ProfilePage extends StatelessWidget {
               child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const CircleAvatar(
+                  radius: 40,
+                  backgroundImage: AssetImage("assets/images/default_profile.png"),
+                ),
+                height32,
                 TextfieldIconed(
                     isEnabled: false,
                     hintText: "Enter your name",
