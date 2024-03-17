@@ -6,6 +6,10 @@ sealed class MemberEvent {}
 class gitDataEvent extends MemberEvent {
   
 }
+
+class getOneCvEvent extends MemberEvent {
+  
+}
 class addMember extends MemberEvent {
 CV cv;
   addMember(this.cv);

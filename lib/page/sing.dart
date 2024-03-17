@@ -19,37 +19,43 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: Colors.blueGrey,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
+              const Text("singup to",
+                  style: TextStyle(fontSize: 20, color: Colors.white)),
+              const Text("how to get",
+                  style: TextStyle(fontSize: 25, color: Colors.white)),
+              const Text("job",
+                  style: TextStyle(fontSize: 30, color: Colors.white)),
               TextField(
                 controller: nameController,
-decoration: const InputDecoration(
+decoration:  InputDecoration(filled: true,fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white, width: 10),
                         borderRadius: BorderRadius.all(Radius.circular(20))),
-                    prefixIcon: Icon(Icons.person_sharp, color: Colors.white),hintStyle: TextStyle(color: Colors.white),
+                    prefixIcon: Icon(Icons.person_sharp, color: Colors.black),hintStyle: TextStyle(color: Colors.black),
                                       hintText: "name"),
               ),
-              TextField(
+              TextField(style: TextStyle(color: Colors.black),
                 controller: emailController,
-decoration: const InputDecoration(
+decoration: const InputDecoration(filled: true,fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white, width: 10),
                         borderRadius: BorderRadius.all(Radius.circular(20))),
-                    prefixIcon: Icon(Icons.email, color: Colors.white),hintStyle: TextStyle(color: Colors.white),
+                    prefixIcon: Icon(Icons.email, color: Colors.black),hintStyle: TextStyle(color: Colors.black),
                                       hintText: "email"),
               ),
-              TextField(
+              TextField(style: TextStyle(color: Colors.black),
                 controller: passwordController,
-decoration: const InputDecoration(
+decoration: const InputDecoration(filled: true,fillColor: Colors.white,
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white, width: 10),
+                        borderSide: BorderSide(color: Colors.black, width: 10),
                         borderRadius: BorderRadius.all(Radius.circular(20))),
-                    prefixIcon: Icon(Icons.password, color: Colors.white),hintStyle: TextStyle(color: Colors.white),
+                    prefixIcon: Icon(Icons.password, color: Colors.black),hintStyle: TextStyle(color: Colors.black),
                                       hintText: "password"),
               ),
               const SizedBox(
@@ -77,7 +83,7 @@ decoration: const InputDecoration(
                       },
                     ), (route) => false);
                   },
-                  child: const Text("Login")),
+                  child: const Text("Login",style: TextStyle(color: Colors.purple,))),
             ],
           ),
         ),

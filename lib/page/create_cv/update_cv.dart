@@ -23,12 +23,12 @@ import 'package:try_auth_suba/page/create_cv/skills/skill.dart';
 import 'package:try_auth_suba/page/create_cv/skills/skills_add_widget.dart';
 
 
-class CVInsertScreen extends StatefulWidget {
+class CVUpdateScreen extends StatefulWidget {
   @override
   _CVInsertScreenState createState() => _CVInsertScreenState();
 }
 
-class _CVInsertScreenState extends State<CVInsertScreen> {
+class _CVInsertScreenState extends State<CVUpdateScreen> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
@@ -182,7 +182,7 @@ class _CVInsertScreenState extends State<CVInsertScreen> {
     setState(() {});
   }
 
-  Future<void> insertCV() async {
+  Future<void> update() async {
     if (nameController.text.isEmpty || addressController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please fill in all fields')),
@@ -208,12 +208,12 @@ class _CVInsertScreenState extends State<CVInsertScreen> {
         linkedInLink: linkedLink.text,
         interests: interests.text);
 try {
-    await serves.insertCv(cv);
+    await serves.updateCv(cv);
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('CV inserted successfully')),
+      const SnackBar(content: Text('CV update successfully')),
     );  } catch (error) {
           ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Error inserting CV')),
+      const SnackBar(content: Text('Error update CV')),
     );
   }
   }
@@ -222,7 +222,7 @@ try {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Insert CV'),
+        title: const Text('update CV'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -398,8 +398,8 @@ try {
             ),
             const SizedBox(height: 20.0),
             ElevatedButton(
-              onPressed: insertCV,
-              child: const Text('Insert CV'),
+              onPressed: update,
+              child: const Text('update CV'),
             ),
           ],
         ),

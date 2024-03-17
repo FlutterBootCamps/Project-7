@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:try_auth_suba/model/education.dart';
 
-class EduWidget extends StatelessWidget {
-  const EduWidget({
+class EduAddWidget extends StatelessWidget {
+  const EduAddWidget({
     super.key,
     required this.degree,
     required this.institution,

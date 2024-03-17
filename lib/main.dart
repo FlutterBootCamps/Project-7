@@ -4,10 +4,10 @@ import 'package:try_auth_suba/api/serves.dart';
 import 'package:try_auth_suba/bloc/member_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:try_auth_suba/page/home.dart';
 import 'package:try_auth_suba/page/log.dart';
+import 'package:try_auth_suba/page/user_cv.dart';
 import 'package:try_auth_suba/setup/git_it.dart';
-import 'package:try_auth_suba/temp%20cv/view_cv.dart';
+import 'package:try_auth_suba/temp%20cv/view_all_cv.dart';
 
 
 Future<void> main() async {
@@ -34,7 +34,7 @@ class MainApp extends StatelessWidget {
         home:
          gitIt().locator.get<Serves>().token == ""
             ? const LoginPage()
-            : const HomePage(),
+            : const UserCv(),
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:get_storage/get_storage.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:try_auth_suba/model/cv_model.dart';
+import 'package:try_auth_suba/setup/git_it.dart';
 
 class Serves{
 final box=GetStorage();
@@ -48,43 +49,64 @@ CVs.add(note);
         ]).select();
         
 }
-
-    Future insertCv(CV cv) async {
+Future<void> insertCv(CV cv) async {
+  try {
     await supabase
         .from('cv')
         .insert([
-          {'user_id':"21db49ba-c9e8-4348-8933-2a4c7a7bdaa5",
-           'name':cv.name,
-           'address':cv.address,
-           'phone':cv.phone,
-           'email':cv.email,
-           'git_hub_link':cv.githubLink,
-           'linked_in_link':cv.linkedInLink,
-           'summary':cv.summary,
-           'education':json.encode(cv.education),
-           'certification':json.encode(cv.certification),
-           'experience':json.encode(cv.experience),
-           'skills':json.encode(cv.skills),
-           'languages':json.encode(cv.languages),
-           'interests':cv.interests,
-           'project':json.encode(cv.project),
-           'references_person':json.encode(cv.references),
-           },
-        ]);
-        
+          {
+            'user_id': gitIt().locator.get<Serves>().user_id,
+            'name': cv.name,
+            'address': cv.address,
+            'phone': cv.phone,
+            'email': cv.email,
+            'git_hub_link': cv.githubLink,
+            'linked_in_link': cv.linkedInLink,
+            'summary': cv.summary,
+            'education': json.encode(cv.education),
+            'certification': json.encode(cv.certification),
+            'experience': json.encode(cv.experience),
+            'skills': json.encode(cv.skills),
+            'languages': json.encode(cv.languages),
+            'interests': cv.interests,
+            'project': json.encode(cv.project),
+            'references_person': json.encode(cv.references),
+          },
+        ]).select();
+  } catch (error) {
+    print('Error inserting CV: $error');
+    // You can handle or return the error here if needed
+  }
 }
 
-Future deleteNoteData(String id) async {
+Future<void> updateCv(CV cv) async {
+  try {
     await supabase
-        .from('note')
-        .delete()
-        .eq('id',id);
-}
-Future updateData(String id,String note) async {
-    await supabase
-        .from('note')
-        .update({'note': note})
-        .eq('id',id);
+        .from('cv')
+        .update(
+          {
+            'user_id': gitIt().locator.get<Serves>().user_id,
+            'name': cv.name,
+            'address': cv.address,
+            'phone': cv.phone,
+            'email': cv.email,
+            'git_hub_link': cv.githubLink,
+            'linked_in_link': cv.linkedInLink,
+            'summary': cv.summary,
+            'education': json.encode(cv.education),
+            'certification': json.encode(cv.certification),
+            'experience': json.encode(cv.experience),
+            'skills': json.encode(cv.skills),
+            'languages': json.encode(cv.languages),
+            'interests': cv.interests,
+            'project': json.encode(cv.project),
+            'references_person': json.encode(cv.references),
+          },
+        ).select();
+  } catch (error) {
+    print('Error inserting CV: $error');
+    // You can handle or return the error here if needed
+  }
 }
 
 Future<User?>getUserIdByToken() async{

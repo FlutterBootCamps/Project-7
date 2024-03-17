@@ -18,6 +18,14 @@ List x=await servesLocator.getCv();
       //ALL CVs
       emit(MemberShow(x));
     },);
+
+on<getOneCvEvent>((event, emit) async{
+      final servesLocator =gitIt().locator.get<Serves>();
+CV x=await servesLocator.getCVOfUser();
+      //ALL CVs
+      emit(ShowCv(x));
+    },);
+
         on<addMember>((event, emit) async{
       final servesLocator =gitIt().locator.get<Serves>();
       await servesLocator.insertCv(event.cv);

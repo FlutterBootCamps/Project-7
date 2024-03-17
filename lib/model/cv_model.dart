@@ -13,13 +13,13 @@ class CV {
   String? linkedInLink;
   String summary;
   List<Education> education;
-  List<Certification> certification;
+  List<Certification> certification;//
   List<Experience> experience;
   List<String> skills;
   List<String> languages;
-  String? interests;
-  List<Project> project;
-  List<Reference>? references;
+  String? interests;//
+  List<Project> project;//
+  List<Reference>? references;//
   String userId;
 CV({
   required this.name,

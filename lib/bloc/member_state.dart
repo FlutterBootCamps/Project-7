@@ -9,3 +9,8 @@ final class MemberShow extends MemberState {
   List listMember;
   MemberShow(this.listMember);
 }
+
+final class ShowCv extends MemberState {
+  CV cv;
+  ShowCv(this.cv);
+}
