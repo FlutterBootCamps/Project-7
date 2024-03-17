@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
-class EducationContainer extends StatelessWidget {
-  const EducationContainer({
+class EducationCard extends StatelessWidget {
+  const EducationCard({
     super.key,
     required this.isUser,
     required this.education,

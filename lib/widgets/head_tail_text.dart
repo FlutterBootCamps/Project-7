@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class HeadTailText extends StatelessWidget {
   const HeadTailText({
-    super.key, required this.headText, required this.tailText, this.headColor = whiteColor, this.tailColor = milkChocolateColor, this.headSize = 16, this.tailSize = 16, this.headWeight = FontWeight.w600, this.tailWeight = FontWeight.w500,
+    super.key, required this.headText, required this.tailText, this.headColor = whiteColor, this.tailColor = milkChocolateColor, this.headSize = 16, this.tailSize = 16, this.headWeight = FontWeight.w600, this.tailWeight = FontWeight.w500, this.maxLines = 1,
   });
   final String headText;
   final String tailText;
@@ -14,11 +14,12 @@ class HeadTailText extends StatelessWidget {
   final double? tailSize;
   final FontWeight? headWeight;
   final FontWeight? tailWeight;
+  final int? maxLines;
   
   @override
   Widget build(BuildContext context) {
     return RichText(
-      maxLines: 1,
+      maxLines: maxLines,
       overflow: TextOverflow.clip,
       text: TextSpan(
         style: TextStyle(

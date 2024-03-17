@@ -10,8 +10,8 @@ class Project {
   late final int? id;
   late String title;
   late String description;
-  late DateTime startDate;
-  late DateTime endDate;
+  late DateTime? startDate;
+  late DateTime? endDate;
   int resumeId;
   
   Project.fromJson(Map<String, dynamic> json)
@@ -26,8 +26,8 @@ class Project {
     return {
       'title': title,
       'description': description,
-      'startDate': startDate.toIso8601String(),
-      'endDate': endDate.toIso8601String(),
+      'startDate': startDate!.toIso8601String(),
+      'endDate': endDate!.toIso8601String(),
       'resumeId': resumeId,
     };
   }

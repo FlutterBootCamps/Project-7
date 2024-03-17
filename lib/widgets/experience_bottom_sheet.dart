@@ -8,19 +8,19 @@ import 'package:cv_maker_app/widgets/text_field_iconed.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-class EducationBottomSheet extends StatelessWidget {
-  const EducationBottomSheet({
+class ExperienceBottomSheet extends StatelessWidget {
+  const ExperienceBottomSheet({
     super.key,
-    required this.degreeController,
-    required this.schoolController,
+    required this.jobTitleController,
+    required this.employerController,
     required this.countryController,
     required this.cityController,
     required this.startDateController,
     required this.endDateController, this.onTap, this.isEdit = false,
   });
 
-  final TextEditingController degreeController;
-  final TextEditingController schoolController;
+  final TextEditingController jobTitleController;
+  final TextEditingController employerController;
   final TextEditingController countryController;
   final TextEditingController cityController;
   final TextEditingController startDateController;
@@ -43,7 +43,7 @@ class EducationBottomSheet extends StatelessWidget {
       child: Column(
         children: [
           const Text(
-                "Education",
+                "Experience",
                 style: TextStyle(
                   color: brownColor,
                   fontFamily: nohemiFont,
@@ -52,18 +52,18 @@ class EducationBottomSheet extends StatelessWidget {
                 ),
               ),
           TextfieldIconed(
-            controller: degreeController,
-            hintText: "Enter your degree",
-            labelText: "Degree",
-            icon: const Icon(Icons.school_rounded),
+            controller: jobTitleController,
+            hintText: "Enter your job title",
+            labelText: "Job Title",
+            icon: const Icon(Icons.work_rounded),
           ),
           height16,
           TextfieldIconed(
-            controller: schoolController,
-            hintText: "Enter your school/college",
-            labelText: "School/College",
+            controller: employerController,
+            hintText: "Enter your employer",
+            labelText: "Employer",
             icon: const Icon(
-                Icons.location_city_rounded),
+                Icons.home_work_rounded),
           ),
           height16,
           TextfieldIconed(
@@ -121,7 +121,7 @@ class EducationBottomSheet extends StatelessWidget {
           height32,
           BottomButton(
               buttonColor: brownColor,
-              text: (isEdit!) ? "Edit Education" : "Add Education",
+              text: (isEdit!) ? "Edit Experience" : "Add Experience",
               textColor: whiteColor,
               textSize: 16,
               buttonWidth:

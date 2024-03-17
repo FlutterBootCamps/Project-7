@@ -9,6 +9,9 @@ import 'package:cv_maker_app/widgets/education_container.dart';
 import 'package:cv_maker_app/widgets/experience_card.dart';
 import 'package:cv_maker_app/widgets/personal_info_bottom_sheet.dart';
 import 'package:cv_maker_app/widgets/personal_info_card.dart';
+import 'package:cv_maker_app/widgets/project_card.dart';
+import 'package:cv_maker_app/widgets/reference_card.dart';
+import 'package:cv_maker_app/widgets/skill_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -185,7 +188,7 @@ class CvDetailsPage extends StatelessWidget {
                               fontWeight: FontWeight.w600),
                         )
                       : nothing,
-                  height16,
+                  (state.educationList.isNotEmpty) ? height16 : nothing,
                   (state.educationList.isNotEmpty)
                       ? SizedBox(
                           width: context.getWidth(context),
@@ -199,14 +202,14 @@ class CvDetailsPage extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemCount: state.educationList.length,
                             itemBuilder: (context, index) {
-                              return EducationContainer(
+                              return EducationCard(
                                 isUser: isUser,
                                 education: state.educationList[index],
                               );
                             },
                           ))
                       : nothing,
-                  height16,
+                  (state.educationList.isNotEmpty) ? height16 : nothing,
                   (state.experienceList.isNotEmpty)
                       ? const Text(
                           "Experience",
@@ -217,7 +220,7 @@ class CvDetailsPage extends StatelessWidget {
                               fontWeight: FontWeight.w600),
                         )
                       : nothing,
-                  height16,
+                  (state.experienceList.isNotEmpty) ? height16 : nothing,
                   (state.experienceList.isNotEmpty)
                       ? SizedBox(
                           width: context.getWidth(context),
@@ -231,12 +234,106 @@ class CvDetailsPage extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemCount: state.experienceList.length,
                             itemBuilder: (context, index) {
-                              return ExperienceCard(isUser: isUser, experience: state.experienceList[index]);
+                              return ExperienceCard(
+                                  isUser: isUser,
+                                  experience: state.experienceList[index]);
                             },
                           ))
                       : nothing,
-                      height16,
-
+                  (state.experienceList.isNotEmpty) ? height16 : nothing,
+                  (state.projectList.isNotEmpty)
+                      ? const Text(
+                          "Projects",
+                          style: TextStyle(
+                              color: brownColor,
+                              fontFamily: nohemiFont,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600),
+                        )
+                      : nothing,
+                  (state.projectList.isNotEmpty) ? height16 : nothing,
+                  (state.projectList.isNotEmpty)
+                      ? SizedBox(
+                          width: context.getWidth(context),
+                          height: 200,
+                          child: GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 1,
+                                    childAspectRatio: .555,
+                                    mainAxisSpacing: 16),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: state.projectList.length,
+                            itemBuilder: (context, index) {
+                              return ProjectCard(
+                                  isUser: isUser,
+                                  project: state.projectList[index]);
+                            },
+                          ))
+                      : nothing,
+                  (state.projectList.isNotEmpty) ? height16 : nothing,
+                  (state.skillList.isNotEmpty)
+                      ? const Text(
+                          "Skills",
+                          style: TextStyle(
+                              color: brownColor,
+                              fontFamily: nohemiFont,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600),
+                        )
+                      : nothing,
+                  (state.skillList.isNotEmpty) ? height16 : nothing,
+                  (state.skillList.isNotEmpty)
+                      ? SizedBox(
+                          width: context.getWidth(context),
+                          height: 200,
+                          child: GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 1,
+                                    childAspectRatio: .555,
+                                    mainAxisSpacing: 16),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: state.skillList.length,
+                            itemBuilder: (context, index) {
+                              return SkillCard(
+                                  isUser: isUser,
+                                  skill: state.skillList[index]);
+                            },
+                          ))
+                      : nothing,
+                  (state.skillList.isNotEmpty) ? height16 : nothing,
+                  (state.referenceList.isNotEmpty)
+                      ? const Text(
+                          "References",
+                          style: TextStyle(
+                              color: brownColor,
+                              fontFamily: nohemiFont,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600),
+                        )
+                      : nothing,
+                  (state.referenceList.isNotEmpty) ? height16 : nothing,
+                  (state.referenceList.isNotEmpty)
+                      ? SizedBox(
+                          width: context.getWidth(context),
+                          height: 200,
+                          child: GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 1,
+                                    childAspectRatio: .555,
+                                    mainAxisSpacing: 16),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: state.referenceList.length,
+                            itemBuilder: (context, index) {
+                              return ReferenceCard(
+                                  isUser: isUser,
+                                  reference: state.referenceList[index]);
+                            },
+                          ))
+                      : nothing,
+                  (state.referenceList.isNotEmpty) ? height16 : nothing,
                 ],
               );
             } else if (state is CvErrorState) {

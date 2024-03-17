@@ -1,19 +1,19 @@
 import 'package:cv_maker_app/data_layer/home_data_layer.dart';
 import 'package:cv_maker_app/helpers/extensions/screen_helper.dart';
-import 'package:cv_maker_app/models/experience_model.dart';
+import 'package:cv_maker_app/models/project_model.dart';
 import 'package:cv_maker_app/utils/colors.dart';
 import 'package:cv_maker_app/utils/spacing.dart';
 import 'package:cv_maker_app/widgets/head_tail_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-class ExperienceCard extends StatelessWidget {
-  const ExperienceCard({
+class ProjectCard extends StatelessWidget {
+  const ProjectCard({
     super.key,
-    required this.isUser, required this.experience,
+    required this.isUser, required this.project,
   });
-  
-  final Experience experience;
+
+  final Project project;
   final bool isUser;
 
   @override
@@ -31,27 +31,9 @@ class ExperienceCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HeadTailText(
-            headText: experience.jobTitle,
-            tailText: "",
-            headSize: 20,
-          ),
-          HeadTailText(
-            headText: "",
-            tailText: experience.employer,
-            tailSize: 18,
-          ),
-          HeadTailText(
-            headText: "",
-            tailText:
-                "${locator.formatDate(experience.startDate!)} - ${locator.formatDate(experience.endDate!)}",
-            tailSize: 16,
-          ),
-          HeadTailText(
-            headText: "",
-            tailText: "${experience.city}, ${experience.country}",
-            tailSize: 14,
-          ),
+          HeadTailText(headText: project.title, tailText: "", headSize: 20),
+          HeadTailText(headText: "", tailText: "${locator.formatDate(project.startDate!)} - ${locator.formatDate(project.endDate!)}", tailSize: 14),
+          HeadTailText(headText: "", tailText: project.description, tailSize: 10, maxLines: 4,),
           (isUser)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.end,

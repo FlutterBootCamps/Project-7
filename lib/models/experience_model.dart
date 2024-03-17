@@ -15,8 +15,8 @@ class Experience {
   late String employer;
   late String country;
   late String city;
-  late DateTime startDate;
-  late DateTime endDate;
+  late DateTime? startDate;
+  late DateTime? endDate;
   int resumeId;
   
   Experience.fromJson(Map<String, dynamic> json)
@@ -35,8 +35,8 @@ class Experience {
       'employer': employer,
       'country': country,
       'city': city,
-      'startDate': startDate.toIso8601String(),
-      'endDate': endDate.toIso8601String(),
+      'startDate': startDate!.toIso8601String(),
+      'endDate': endDate!.toIso8601String(),
       'resumeId': resumeId,
     };
   }
