@@ -1,22 +1,16 @@
-# CV Creator App with Flutter and Supabase
+# project8
 
-Welcome to the CV Creator App project! In this project, you will build a mobile application using Flutter and Supabase to enable users to create, manage, and share their Curriculum Vitae (CV).
+A new Flutter project.
 
-## Project Features:
+## Getting Started
 
-- **Authentication:** Implement user authentication with Supabase to allow users to securely sign up and log in to the app.
-  
-- **CV Creation:** Enable users to create their CV within the app by adding sections such as Personal Information, Education, Work Experience, Skills, Projects, and References.
-  
-- **CRUD Functions:** Implement CRUD (Create, Read, Update, Delete) operations to allow users to add new sections, update existing sections, delete sections they no longer need, and view their complete CV.
-  
-- **User Interface Polishing:** Focus on crafting a polished user interface with excellent appearance. 
-  
-- **Multi-Screen Implementation:** Implement more than 5 screens in the app, utilizing all past concepts covered in class, including navigation, state management, UI design, and data fetching.
+This project is a starting point for a Flutter application.
 
-- **View Other Users' CVs:** Enable users to view CVs created by other users. 
+A few resources to get you started if this is your first Flutter project:
 
-## Deadline:
-17-Mar-2024, 10:29 AM
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-**Have fun building your Resume/CV App Creator.**
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
