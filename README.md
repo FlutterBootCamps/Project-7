@@ -1,22 +1,46 @@
 # CV Creator App with Flutter and Supabase
 
-Welcome to the CV Creator App project! In this project, you will build a mobile application using Flutter and Supabase to enable users to create, manage, and share their Curriculum Vitae (CV).
+#Sign-Up
 
-## Project Features:
+![Screenshot_1710649219](https://github.com/mohammed0172000/Project-7/assets/82112256/16ecfeae-d2fd-4ec6-abe4-cf54b2ca1e89)
 
-- **Authentication:** Implement user authentication with Supabase to allow users to securely sign up and log in to the app.
-  
-- **CV Creation:** Enable users to create their CV within the app by adding sections such as Personal Information, Education, Work Experience, Skills, Projects, and References.
-  
-- **CRUD Functions:** Implement CRUD (Create, Read, Update, Delete) operations to allow users to add new sections, update existing sections, delete sections they no longer need, and view their complete CV.
-  
-- **User Interface Polishing:** Focus on crafting a polished user interface with excellent appearance. 
-  
-- **Multi-Screen Implementation:** Implement more than 5 screens in the app, utilizing all past concepts covered in class, including navigation, state management, UI design, and data fetching.
+#Sign-Up-Check
 
-- **View Other Users' CVs:** Enable users to view CVs created by other users. 
+![Screenshot_1710649247](https://github.com/mohammed0172000/Project-7/assets/82112256/1082eb22-48d7-4265-9e02-ce050044214c)
 
-## Deadline:
-17-Mar-2024, 10:29 AM
 
-**Have fun building your Resume/CV App Creator.**
+#Log-In
+
+![Screenshot_1710649272](https://github.com/mohammed0172000/Project-7/assets/82112256/c9ae4b90-dae4-4d36-b7d6-a3a50a9dd572)
+
+
+#Log-In-Check
+
+![Screenshot_1710649279](https://github.com/mohammed0172000/Project-7/assets/82112256/344eca2d-8f50-451f-becc-1b4e0a188427)
+
+
+#Create-New-CV
+
+![Screenshot_1710649315](https://github.com/mohammed0172000/Project-7/assets/82112256/9688f686-7b78-4cdf-b4f4-12bb6bf16125)
+
+
+#Befor Create Cv.
+
+![Screenshot_1710649325](https://github.com/mohammed0172000/Project-7/assets/82112256/4be0a8ec-039c-4ae2-a7b7-a7d438296fd5)
+
+
+#After Creating Cv.
+
+![Screenshot_1710649361](https://github.com/mohammed0172000/Project-7/assets/82112256/3852b9e9-e7fe-4b98-879a-a458cdc04f67)
+
+
+#Edit
+
+#All-Users-View-CV
+
+![Screenshot_1710649386](https://github.com/mohammed0172000/Project-7/assets/82112256/46bf2ba8-ad27-46eb-83da-dd8e238d8175)
+
+
+
+
+
