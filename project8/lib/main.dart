@@ -1,4 +1,4 @@
-@import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:project8/bloc/cv_bloc.dart';
 import 'package:project8/data/data_layer.dart';
