@@ -1,18 +1,22 @@
+import 'package:cv_maker_app/bloc/cv_bloc.dart';
 import 'package:cv_maker_app/data_layer/home_data_layer.dart';
 import 'package:cv_maker_app/helpers/extensions/screen_helper.dart';
 import 'package:cv_maker_app/models/experience_model.dart';
 import 'package:cv_maker_app/utils/colors.dart';
 import 'package:cv_maker_app/utils/spacing.dart';
+import 'package:cv_maker_app/widgets/experience_bottom_sheet.dart';
 import 'package:cv_maker_app/widgets/head_tail_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 class ExperienceCard extends StatelessWidget {
   const ExperienceCard({
     super.key,
-    required this.isUser, required this.experience,
+    required this.isUser,
+    required this.experience,
   });
-  
+
   final Experience experience;
   final bool isUser;
 
@@ -57,13 +61,67 @@ class ExperienceCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          TextEditingController jobTitleController =
+                              TextEditingController(text: experience.jobTitle);
+                          TextEditingController employerController =
+                              TextEditingController(text: experience.employer);
+                          TextEditingController countryController =
+                              TextEditingController(text: experience.country);
+                          TextEditingController cityController =
+                              TextEditingController(text: experience.city);
+                          TextEditingController startDateController =
+                              TextEditingController(
+                                  text: locator
+                                      .formatDate(experience.startDate!));
+                          TextEditingController endDateController =
+                              TextEditingController(
+                                  text:
+                                      locator.formatDate(experience.endDate!));
+                          locator.currentlySelectedStartDate =
+                              experience.startDate;
+                          locator.currentlySelectedEndDate = experience.endDate;
+                          showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) {
+                              return ExperienceBottomSheet(
+                                isEdit: true,
+                                jobTitleController: jobTitleController,
+                                employerController: employerController,
+                                countryController: countryController,
+                                cityController: cityController,
+                                startDateController: startDateController,
+                                endDateController: endDateController,
+                                onTap: () {
+                                  context.read<CvBloc>().add(
+                                      UpdateExperienceEvent(
+                                          experience: Experience(
+                                              jobTitle: jobTitleController.text,
+                                              employer: employerController.text,
+                                              country: countryController.text,
+                                              city: cityController.text,
+                                              startDate: locator
+                                                  .currentlySelectedStartDate,
+                                              endDate: locator
+                                                  .currentlySelectedEndDate,
+                                              resumeId: experience.resumeId),
+                                          id: experience.id!));
+                                  Navigator.pop(context);
+                                },
+                              );
+                            },
+                          );
+                        },
                         icon: const Icon(
                           Icons.edit,
                           color: whiteColor,
                         )),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.read<CvBloc>().add(
+                              RemoveExperienceEvent(experience: experience));
+                        },
                         icon: const Icon(
                           Icons.delete_rounded,
                           color: whiteColor,

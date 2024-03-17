@@ -1,10 +1,13 @@
+import 'package:cv_maker_app/bloc/cv_bloc.dart';
 import 'package:cv_maker_app/data_layer/home_data_layer.dart';
 import 'package:cv_maker_app/helpers/extensions/screen_helper.dart';
 import 'package:cv_maker_app/models/project_model.dart';
 import 'package:cv_maker_app/utils/colors.dart';
 import 'package:cv_maker_app/utils/spacing.dart';
 import 'package:cv_maker_app/widgets/head_tail_text.dart';
+import 'package:cv_maker_app/widgets/project_bottom_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -39,13 +42,52 @@ class ProjectCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          TextEditingController titleController =
+                      TextEditingController(text: project.title);
+                  TextEditingController descriptionController =
+                      TextEditingController(text: project.description);
+                  TextEditingController startDateController =
+                      TextEditingController(text: locator.formatDate(project.startDate!));
+                  TextEditingController endDateController =
+                      TextEditingController(text: locator.formatDate(project.endDate!));
+                  locator.currentlySelectedStartDate = project.startDate;
+                  locator.currentlySelectedEndDate = project.endDate;
+                  showModalBottomSheet(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (context) {
+                      return ProjectBottomSheet(
+                        isEdit: true,
+                        titleController: titleController,
+                        descriptionController: descriptionController,
+                        startDateController: startDateController,
+                        endDateController: endDateController,
+                        onTap: () {
+                          context.read<CvBloc>().add(UpdateProjectEvent(
+                              project: Project(
+                                  title: titleController.text,
+                                  description: descriptionController.text,
+                                  startDate: locator.currentlySelectedStartDate,
+                                  endDate: locator.currentlySelectedEndDate,
+                                  resumeId: project.resumeId,),
+                                  id: project.id!));
+                          Navigator.pop(context);
+                        },
+                      );
+                    },
+                  );
+                        },
                         icon: const Icon(
                           Icons.edit,
                           color: whiteColor,
                         )),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context
+                              .read<CvBloc>()
+                              .add(RemoveProjectEvent(project: project));
+                        },
                         icon: const Icon(
                           Icons.delete_rounded,
                           color: whiteColor,

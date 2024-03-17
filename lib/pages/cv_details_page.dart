@@ -179,14 +179,27 @@ class CvDetailsPage extends StatelessWidget {
                   ),
                   height16,
                   (state.educationList.isNotEmpty)
-                      ? const Text(
-                          "Education",
-                          style: TextStyle(
-                              color: brownColor,
-                              fontFamily: nohemiFont,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600),
-                        )
+                      ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                              "Education",
+                              style: TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              "${state.educationList.length}",
+                              style: const TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                        ],
+                      )
                       : nothing,
                   (state.educationList.isNotEmpty) ? height16 : nothing,
                   (state.educationList.isNotEmpty)
@@ -211,14 +224,27 @@ class CvDetailsPage extends StatelessWidget {
                       : nothing,
                   (state.educationList.isNotEmpty) ? height16 : nothing,
                   (state.experienceList.isNotEmpty)
-                      ? const Text(
-                          "Experience",
-                          style: TextStyle(
-                              color: brownColor,
-                              fontFamily: nohemiFont,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600),
-                        )
+                      ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                              "Experience",
+                              style: TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              "${state.experienceList.length}",
+                              style: const TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                        ],
+                      )
                       : nothing,
                   (state.experienceList.isNotEmpty) ? height16 : nothing,
                   (state.experienceList.isNotEmpty)
@@ -242,14 +268,27 @@ class CvDetailsPage extends StatelessWidget {
                       : nothing,
                   (state.experienceList.isNotEmpty) ? height16 : nothing,
                   (state.projectList.isNotEmpty)
-                      ? const Text(
-                          "Projects",
-                          style: TextStyle(
-                              color: brownColor,
-                              fontFamily: nohemiFont,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600),
-                        )
+                      ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                              "Projects",
+                              style: TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              "${state.projectList.length}",
+                              style: const TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                        ],
+                      )
                       : nothing,
                   (state.projectList.isNotEmpty) ? height16 : nothing,
                   (state.projectList.isNotEmpty)
@@ -273,14 +312,27 @@ class CvDetailsPage extends StatelessWidget {
                       : nothing,
                   (state.projectList.isNotEmpty) ? height16 : nothing,
                   (state.skillList.isNotEmpty)
-                      ? const Text(
-                          "Skills",
-                          style: TextStyle(
-                              color: brownColor,
-                              fontFamily: nohemiFont,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600),
-                        )
+                      ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                              "Skills",
+                              style: TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              "${state.skillList.length}",
+                              style: const TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                        ],
+                      )
                       : nothing,
                   (state.skillList.isNotEmpty) ? height16 : nothing,
                   (state.skillList.isNotEmpty)
@@ -304,14 +356,27 @@ class CvDetailsPage extends StatelessWidget {
                       : nothing,
                   (state.skillList.isNotEmpty) ? height16 : nothing,
                   (state.referenceList.isNotEmpty)
-                      ? const Text(
-                          "References",
-                          style: TextStyle(
-                              color: brownColor,
-                              fontFamily: nohemiFont,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600),
-                        )
+                      ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                              "References",
+                              style: TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              "${state.referenceList.length}",
+                              style: const TextStyle(
+                                  color: brownColor,
+                                  fontFamily: nohemiFont,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                        ],
+                      )
                       : nothing,
                   (state.referenceList.isNotEmpty) ? height16 : nothing,
                   (state.referenceList.isNotEmpty)
