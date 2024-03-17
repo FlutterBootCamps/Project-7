@@ -1,16 +1,6 @@
-# project8
 
-A new Flutter project.
+![Screenshot_1710660405](https://github.com/YaYa-2/Project-7/assets/130002587/6d3f35cb-881c-49d2-bcc3-0aeb1d5bc933)
+![Screenshot_1710659143](https://github.com/YaYa-2/Project-7/assets/130002587/e5339a07-dfa2-4369-a847-6875de287cad)
+![Screenshot_1710658940](https://github.com/YaYa-2/Project-7/assets/130002587/7dcff41f-b2f4-4b9d-bd18-2f9b0fa80a9c)
+![Screenshot_1710658933](https://github.com/YaYa-2/Project-7/assets/130002587/2446fb34-7edf-47c5-8cd9-766a0d865b24)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
