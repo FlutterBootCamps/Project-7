@@ -1,10 +1,20 @@
 # cv_app
 
+Creating a CV application with CRUD (Create, Read, Update, Delete) functionality using Supabase can be a powerful and efficient way to manage CVs. Here's a description of how such an application could function :
+
+- User Authentication: Users can sign up and log in securely using Supabase authentication, ensuring that each user has a unique account.
+- CV Creation: Users can create a new CV by providing their personal details, such as name, contact information .
+- CV Editing: Users can easily edit their existing CVs to update information .
+- CV Deletion: Users can delete their CVs if they no longer need them, removing them from the database.
+- Sharing CVs: Users can share their CVs directly from the application.
+  
 <img width="271" alt="Screenshot 1445-09-07 at 6 09 46 AM" src="https://github.com/maramnaif/Project-7/assets/123784913/687cbcd5-4ff2-4716-873f-7afbd55a82b2">
 
 
 
 <img width="266" alt="Screenshot 1445-09-07 at 6 09 32 AM" src="https://github.com/maramnaif/Project-7/assets/123784913/8aed6af8-3c80-4751-995b-a7037f8bfad7">
+
+
 
 <img width="277" alt="Screenshot 1445-09-07 at 3 20 26 AM" src="https://github.com/maramnaif/Project-7/assets/123784913/33da6664-9cd7-4975-b389-4d3d6bf1f374">
 
@@ -17,8 +27,8 @@
 <img width="278" alt="Screenshot 1445-09-07 at 6 43 31 AM" src="https://github.com/maramnaif/Project-7/assets/123784913/e4b111c1-b184-4d95-94ae-238e215971c6">
 
 
-<img width="268" alt="Screenshot 1445-09-07 at 3 20 52 AM" src="https://github.com/maramnaif/Project-7/assets/123784913/8a184270-02ee-4cbe-a7d3-1e4bdda67544">
 
+<img width="268" alt="Screenshot 1445-09-07 at 3 20 52 AM" src="https://github.com/maramnaif/Project-7/assets/123784913/8a184270-02ee-4cbe-a7d3-1e4bdda67544">
 
 
 
@@ -27,6 +37,7 @@
 
 
 <img width="269" alt="Screenshot 1445-09-07 at 6 48 47 AM" src="https://github.com/maramnaif/Project-7/assets/123784913/99027628-cdd3-4618-b593-e1d84f2351db">
+
 
 
 
