@@ -58,6 +58,7 @@ class CvBloc extends Bloc<CvEvent, CvState> {
     }else {
       emit(CvErrorState(msg: "Please fill out all fields"));
     }
+    await getUserResumes(GetUserResumesEvent(), emit);
   }
 
   FutureOr<void> getAllResumes(GetAllResumesEvent event, Emitter<CvState> emit) async{
@@ -314,6 +315,8 @@ class CvBloc extends Bloc<CvEvent, CvState> {
       try {
         await DBService().addSkill(skill: event.skill);
         emit(ResumeCreatedState(msg: "${event.skill.skill} skill has been added"));
+
+        await getResumeById(GetResumeByIdEvent(id: event.skill.resumeId), emit);
       } catch (e) {
         emit(CvErrorState(msg: "Error in adding this skill"));
       }
@@ -342,6 +345,8 @@ class CvBloc extends Bloc<CvEvent, CvState> {
       try {
         await DBService().updateSkill(skill: event.skill, id: event.id);
         emit(ResumeCreatedState(msg: "${event.skill.skill} skill has been updated"));
+
+        await getResumeById(GetResumeByIdEvent(id: event.skill.resumeId), emit);
       } catch (e) {
         emit(CvErrorState(msg: "Error in updating this skill"));
       }
@@ -359,6 +364,8 @@ class CvBloc extends Bloc<CvEvent, CvState> {
       try {
         await DBService().addReference(reference: event.reference);
         emit(ResumeCreatedState(msg: "${event.reference.name} has been added to reference list"));
+
+        await getResumeById(GetResumeByIdEvent(id: event.reference.resumeId), emit);
       } catch (e) {
         emit(CvErrorState(msg: "Error in adding this reference"));
       }
@@ -387,6 +394,8 @@ class CvBloc extends Bloc<CvEvent, CvState> {
       try {
         await DBService().updateReference(reference: event.reference, id: event.id);
         emit(ResumeCreatedState(msg: "${event.reference.name}'s info has been updated!"));
+
+        await getResumeById(GetResumeByIdEvent(id: event.reference.resumeId), emit);
       } catch (e) {
         emit(CvErrorState(msg: "Error in updating this reference"));
       }

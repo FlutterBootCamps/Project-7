@@ -46,6 +46,8 @@ class HomePage extends StatelessWidget {
                   } else if (state is ResumeCreatedState) {
                     context.showSuccessSnackBar(context, state.msg);
                     context.read<CvBloc>().add(GetUserResumesEvent());
+                  }else if (state is ModfiedResumeState){
+                    (state.isPostive) ? context.showSuccessSnackBar(context, state.msg) : context.showErrorSnackBar(context, state.msg);
                   }
                 },
                 builder: (context, state) {

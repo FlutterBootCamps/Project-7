@@ -36,7 +36,7 @@ class ProjectCard extends StatelessWidget {
         children: [
           HeadTailText(headText: project.title, tailText: "", headSize: 20),
           HeadTailText(headText: "", tailText: "${locator.formatDate(project.startDate!)} - ${locator.formatDate(project.endDate!)}", tailSize: 14),
-          HeadTailText(headText: "", tailText: project.description, tailSize: 10, maxLines: 4,),
+          HeadTailText(headText: "", tailText: project.description, tailSize: 12, maxLines: 4,),
           (isUser)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.end,

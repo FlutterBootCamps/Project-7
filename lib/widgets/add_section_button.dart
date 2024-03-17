@@ -33,6 +33,7 @@ class AddSectionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showMenu(
+          surfaceTintColor: noColor,
             color: brownColor,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
